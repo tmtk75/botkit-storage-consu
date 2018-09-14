@@ -5,7 +5,7 @@ export function newConsulStore(config: {
   consul_url: string;
   kv_root?: string;
 }) {
-  const { hostname, port } = url.parse(config.consul_url);
+  const { hostname, port } = url.parse(config.consul_url || "http://localhost:8500");
   const conf = Object.assign({ kv_root: "botkit/slack" }, config);
   const c = consul({ promisify: true, host: hostname, port });
   const root = conf.kv_root;

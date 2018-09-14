@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const url = require("url");
 const consul = require("consul");
 function newConsulStore(config) {
-    const { hostname, port } = url.parse(config.consul_url);
+    const { hostname, port } = url.parse(config.consul_url || "http://localhost:8500");
     const conf = Object.assign({ kv_root: "botkit/slack" }, config);
     const c = consul({ promisify: true, host: hostname, port });
     const root = conf.kv_root;
