@@ -1,0 +1,17 @@
+{
+  "name": "botkit-storage-consul",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/consul": "^0.23.32",
+    "botkit": "0.6.14",
+    "typescript": "^3.0.3"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "consul": "^0.34.0"
+  }
+}
